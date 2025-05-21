@@ -27,3 +27,6 @@
 .section {
   transition: opacity 0.5s, transform 0.5s;
 }
+.lazy-img {
+  transition: filter 0.5s ease-out;
+}

@@ -144,6 +144,88 @@ sections.forEach((section) => {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all lazy-loaded images
+  const lazyImages = document.querySelectorAll('.lazy-img');
+
+  // Create an Intersection Observer
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        // Remove the blur-sm class when image is in view
+        img.classList.remove('blur-sm');
+        // Optionally stop observing this image now
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '0px',
+    threshold: 0.1
+  });
+
+  // Observe each lazy image
+  lazyImages.forEach(img => {
+    observer.observe(img);
+  });
+});
+
+
+
+const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const indicators = document.querySelectorAll('.indicator');
+  let currentSlide = 0;
+
+  // Show initial slide
+  showSlide(currentSlide);
+
+  // Previous button click handler
+  prevBtn.addEventListener('click', function() {
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = slides.length - 1;
+    }
+    showSlide(currentSlide);
+  });
+
+  // Next button click handler
+  nextBtn.addEventListener('click', function() {
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+      currentSlide = 0;
+    }
+    showSlide(currentSlide);
+  });
+
+  // Indicator click handler
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', function() {
+      currentSlide = index;
+      showSlide(currentSlide);
+    });
+  });
+
+  // Function to show a specific slide
+  function showSlide(index) {
+    // Hide all slides
+    slides.forEach(slide => {
+      slide.classList.add('hidden');
+    });
+    
+    // Remove active class from all indicators
+    indicators.forEach(indicator => {
+      indicator.classList.remove('bg-blue-800');
+    });
+    
+    // Show current slide
+    slides[index].classList.remove('hidden');
+    indicators[index].classList.add('bg-blue-800');
+  }
+
+
+
 
 
 
