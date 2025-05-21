@@ -15,3 +15,15 @@
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 
   }
+
+  .active {
+  transform: translateY(-36%);
+}
+
+.section-hidden{
+    opacity:0;
+    transform: translateY(8rem);
+}
+.section {
+  transition: opacity 0.5s, transform 0.5s;
+}
