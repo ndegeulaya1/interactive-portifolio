@@ -16,7 +16,167 @@ btnScrollTo.addEventListener('click',function(){
   section1.scrollIntoView({behavior:'smooth'});
 });
 
-const h1=document.querySelector('h1');
+const tabss = document.querySelector('.tab');
+const btns = document.querySelectorAll('.btn-operation');
+const contents = document.querySelectorAll('.operation_content');
+
+tabss.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.btn-operation');
+  console.log(clicked);
+  if (!clicked) return;
+
+  const id = clicked.dataset.id;
+  if (!id) return;
+
+  // Remove 'active' from all buttons
+  btns.forEach((btn) => btn.classList.remove('active'));
+
+  // Add 'active' to clicked button
+  clicked.classList.add('active');
+
+  // Hide all tab contents
+  contents.forEach((content) => content.classList.add('hidden'));
+
+  // Show the content with corresponding ID
+  const targetContent = document.querySelector(`.operation_content-${id}`);
+ 
+    targetContent.classList.remove('hidden');
+  
+});
+
+//hover effect
+
+const navs=document.querySelector('.nav');
+
+
+const mouseHover = function(e, opacity){
+ 
+  if(e.target.classList.contains('nav-link')){
+    const link = e.target;
+    const slibling =link.closest('.nav').querySelectorAll('.nav-link');
+    const logo =link.closest('.nav').querySelector('.logo');
+
+
+    slibling.forEach((slib)=>{
+     
+     if(slib !==link){ slib.style.opacity=opacity;
+     }
+    });
+  logo.style.opacity=opacity;
+  }
+
+}
+navs.addEventListener('mouseover',(e)=>{
+  mouseHover(e,0.5);
+})
+navs.addEventListener('mouseout',(e)=>{
+ mouseHover(e,1);
+})
+
+/*
+const initialCoords = section1.getBoundingClientRect();
+
+window.addEventListener('scroll', function () {
+  if (window.scrollY > initialCoords.top) {
+    nav.classList.add('sticky', 'top-0', 'left-0', 'w-full', 'z-50', 'shadow-md', 'bg-white', 'py-3');
+  } else {
+    nav.classList.remove('sticky', 'top-0', 'left-0', 'w-full', 'z-50', 'shadow-md', 'bg-white');
+  }
+});
+
+*/
+
+
+ // Or any top section
+
+const navHeight = navs.getBoundingClientRect().height;
+
+const observer = new IntersectionObserver(
+  entries => {
+    const entry = entries[0];
+    if (!entry.isIntersecting) {
+      nav.classList.add('sticky', 'top-0', 'w-full', 'z-50', 'shadow-md', 'bg-white','py-3');
+    } else {
+      nav.classList.remove('sticky', 'top-0', 'w-full', 'z-50', 'shadow-md', 'bg-white','py-3');
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
+  }
+);
+
+observer.observe(section1);
+
+
+const sections = document.querySelectorAll('.section');
+
+// Define observer options
+const options = {
+  root: null, // relative to viewport
+  threshold: 0.15, // trigger when 10% visible
+     rootMargin: `-${navHeight}px`,
+};
+
+// Callback function
+const revealSection = function(entries, observer) {
+  const [entry] = entries;
+  
+  // Skip if not intersecting
+  if (!entry.isIntersecting) return;
+  
+  // Remove hidden class when section appears
+  entry.target.classList.remove('section-hidden');
+  
+  // Stop observing after revealing
+  observer.unobserve(entry.target);
+};
+
+// Create observer
+const sectionObserver = new IntersectionObserver(revealSection, options);
+
+// Initialize all sections as hidden and start observing
+sections.forEach((section) => {
+  section.classList.add('section-hidden');
+  sectionObserver.observe(section);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+const tab = document.querySelector('.tab');
+const tabContainer = document.querySelector('.operation-container');
+const tabContent = document.querySelectorAll('.operation_content'); // Fixed this line
+const btnTab = document.querySelectorAll('.btn-operation');
+
+tabContainer.addEventListener('click', (e) => {
+  const click = e.target.closest('.btn-operation');
+  if (!click) return;
+
+  btnTab.forEach(t => t.classList.remove('operation-active'));
+  tabContent.forEach(c => c.classList.remove('operation_content-active'));
+
+  click.classList.add('operation-active');
+  document.querySelector(`.operation_content-${click.dataset.tab}`).classList.add('operation_content-active');
+});
+tabContent.forEach(content => content.togg.add('hidden'));
+contentToShow.classList.remove('hidden');
+
+
+*/
+
+
+/*const h1=document.querySelector('h1');
 
 const add = function(){
    h1.innerHTML='hellow';
@@ -28,7 +188,7 @@ h1.addEventListener('mouseenter', add)
 setTimeout(()=>{
   h1.removeEventListener('mouseenter',add);
 },5000)
-
+*/
 
 
 
