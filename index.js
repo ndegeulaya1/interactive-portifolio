@@ -225,8 +225,42 @@ const slides = document.querySelectorAll('.slide');
   }
 
 
+//pop up button
+
+const openPop= document.querySelectorAll('.btn-open');
+const allPop = document.querySelector('.modal');
+const closePop = document.querySelector('.btn-close');
+const overPop = document.querySelector('.overlay');
+let i;
+
+for(let i=0; i<openPop.length; i++){
+    openPop[i].addEventListener('click', function(){
+         allPop.classList.remove('hidden');
+        overPop.classList.remove('hidden');
+    });
+}
 
 
+const closeOver = function(){
+  allPop.classList.add('hidden');
+  overPop.classList.add('hidden');
+}
+closePop.addEventListener('click',closeOver)
+overPop.addEventListener('click',closeOver);
+
+document.addEventListener('keydown', function(e){
+  console.log(e.key)
+  if(e.key==='Escape'){
+    closeOver();
+
+  }
+})
+
+//navigation
+
+const feature = document.getElementById('section--2');
+const operation = document.getElementById('section--3');
+const testMon = document.getElementById('section--3');
 
 
 
