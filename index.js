@@ -172,57 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  const indicators = document.querySelectorAll('.indicator');
-  let currentSlide = 0;
 
-  // Show initial slide
-  showSlide(currentSlide);
-
-  // Previous button click handler
-  prevBtn.addEventListener('click', function() {
-    currentSlide--;
-    if (currentSlide < 0) {
-      currentSlide = slides.length - 1;
-    }
-    showSlide(currentSlide);
-  });
-
-  // Next button click handler
-  nextBtn.addEventListener('click', function() {
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-      currentSlide = 0;
-    }
-    showSlide(currentSlide);
-  });
-
-  // Indicator click handler
-  indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', function() {
-      currentSlide = index;
-      showSlide(currentSlide);
-    });
-  });
-
-  // Function to show a specific slide
-  function showSlide(index) {
-    // Hide all slides
-    slides.forEach(slide => {
-      slide.classList.add('hidden');
-    });
-    
-    // Remove active class from all indicators
-    indicators.forEach(indicator => {
-      indicator.classList.remove('bg-blue-800');
-    });
-    
-    // Show current slide
-    slides[index].classList.remove('hidden');
-    indicators[index].classList.add('bg-blue-800');
-  }
 
 
 //pop up button
@@ -258,9 +208,7 @@ document.addEventListener('keydown', function(e){
 
 //navigation
 
-const feature = document.getElementById('section--2');
-const operation = document.getElementById('section--3');
-const testMon = document.getElementById('section--3');
+
 
 
 

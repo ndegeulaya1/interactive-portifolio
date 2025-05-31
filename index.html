@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <link rel="stylesheet" href="src/output.css">
+
+    
     <title>Document</title>
 </head>
 <body class="font-inter bg-[#f3f3f3] relative">
@@ -21,7 +27,7 @@
 </svg>
 </button>
      <!--mobile navigation-->
-    <div class="sidebar hidden absolute top-0 right-1 flex md:hidden flex-col gap-10 items-center bg-tertiary-darker px-10 py-6 text-white nav">
+    <div class="sidebar hidden absolute top-0 right-1 flex md:hidden flex-col gap-10 items-center bg-tertiary-darker px-10 py-6 text-white nav z-40">
         <button onclick="hide()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
@@ -36,7 +42,7 @@
 <section class="font-inter max-w-[73rem] mx-auto px-3  mt-25 mb-5 section " id="section--1">
     <div class="flex flex-col md:flex-row items-center md:justify-between gap-10">
     <div>
-        <h1 class="sm:text-6xl/20 text-3xl/9 font-semibold font-popin line text-[#4d4a4a] md:text-left text-center">when <span class="bg-primary highlight mr-3 py-1">banking</span>meets <span class="bg-primary highlight py-1">minimalist</span> </h1>
+        <h1 class="relsm:text-6xl/20 text-3xl/9 font-semibold font-popin line text-[#4d4a4a] md:text-left text-center">when <span class="bg-primary highlight mr-3 py-1">banking</span>meets <span class="bg-primary highlight py-1">minimalist</span> </h1>
 
         <p class="text-2xl pt-10">A simpler banking experience for simple lefe</p>
         <button href="#" class="underline text-primary text-xl cursor-pointer pt-10 btn--scroll-to">learn more&darr;</button>
@@ -138,35 +144,15 @@
     </div>
 
 <!--slider-->
-    <div class="relative slides">
+   
 
-        <div class="max-w-[60rem] mx-auto bg-white px-4 py-3">
-        <!--first-->
-     <div class="flex flex-col items-center slide">
-        <h1 class="text-2xl text-primary pt-5">The first step to become the real one</h1>
-        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sed aliquam ipsam modi nobis fugit quo eum minima voluptas ipsa rem suscipit maxime nam, vitae accusantium velit architecto esse ex?</p>
-        <figure class="flex items-center gap-6 pt-6">
-            <img src="image/user-1.jpg" alt="" class="rounded-full">
-            <figcaption>
-                <p class="text-primary text-xl font-semibold">Baton Goodnes</p>
-                <p>London,USA</p>
-            </figcaption>
-        </figure>
-     </div>
 
-     <div class="flex flex-col items-center slide hidden">
-        <h1 class="text-2xl text-primary pt-5">The second step to become the real one</h1>
-        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sed aliquam ipsam modi nobis fugit quo eum minima voluptas ipsa rem suscipit maxime nam, vitae accusantium velit architecto esse ex?</p>
-        <figure class="flex items-center gap-6 pt-6">
-            <img src="image/user-3.jpg" alt="" class="rounded-full">
-            <figcaption>
-                <p class="text-primary text-xl font-semibold">ubuntu thetheseko</p>
-                <p>dar-es-salam,USA</p>
-            </figcaption>
-        </figure>
-     </div>
-      <div class="flex flex-col items-center slide hidden">
-        <h1 class="text-2xl text-primary pt-5">second one is real nice than prev one</h1>
+      <div class="swiper" id="mySwiper">
+    <div class="swiper-wrapper w-full">
+      <!-- Slides -->
+      <div class="swiper-slide p-4">
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h1 class="text-2xl text-primary pt-5">second one is real nice than prev one</h1>
         <p class="text-justify">Together we are here to help you in all aspect esspecilall all about banklist we are hereto implement the new member and if youe late comer we can give the chail soaas you can be in our teritory of us without the need of many</p>
         <figure class="flex items-center gap-6 pt-6">
             <img src="image/user-2.jpg" alt="" class="rounded-full">
@@ -175,36 +161,57 @@
                 <p>London,USA</p>
             </figcaption>
         </figure>
-     </div>
-      
-
-</div>
-
-
-
-        <button class="next absolute top-[50%] right-0 cursor-pointer bg-white rounded-full px-4 py-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-</svg>
-</svg>
-</button>
-<button class="prev absolute top-[50%] left-0 cursor-pointer bg-white rounded-full px-4 py-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
-</svg>
-
-</button>
-
-
-     
-
-   <div class="absolute bottom-30%] right-[60%] indicators">
-<button class="h-3 w-3 bg-amber-300 rounded-full cursor-pointer indicator bg-blue-800"></button>
-<button class="h-3 w-3 bg-amber-300 rounded-full cursor-pointer indicator"></button>
-<button class="h-3 w-3 bg-amber-300 rounded-full cursor-pointer indicator"></button>
-</div>
-
+        </div>
+      </div>
+      <div class="swiper-slide p-4">
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h1 class="text-2xl text-primary pt-5">second one is real nice than prev one</h1>
+        <p class="text-justify">Together we are here to help you in all aspect esspecilall all about banklist we are hereto implement the new member and if youe late comer we can give the chail soaas you can be in our teritory of us without the need of many</p>
+        <figure class="flex items-center gap-6 pt-6">
+            <img src="image/user-2.jpg" alt="" class="rounded-full">
+            <figcaption>
+                <p class="text-primary text-xl font-semibold">Baton Goodnes</p>
+                <p>London,USA</p>
+            </figcaption>
+        </figure>
+        </div>
+      </div>
+      <div class="swiper-slide p-4">
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+            <h1 class="text-2xl text-primary pt-5">second one is real nice than prev one</h1>
+        <p class="text-justify">Together we are here to help you in all aspect esspecilall all about banklist we are hereto implement the new member and if youe late comer we can give the chail soaas you can be in our teritory of us without the need of many</p>
+        <figure class="flex items-center gap-6 pt-6">
+            <img src="image/user-2.jpg" alt="" class="rounded-full">
+            <figcaption>
+                <p class="text-primary text-xl font-semibold">Baton Goodnes</p>
+                <p>London,USA</p>
+            </figcaption>
+        </figure>
+        </div>
+      </div>
+      <div class="swiper-slide p-4">
+        <div class="bg-white rounded-2xl shadow-md p-6 text-center">
+           <h1 class="text-2xl text-primary pt-5">second one is real nice than prev one</h1>
+        <p class="text-justify">Together we are here to help you in all aspect esspecilall all about banklist we are hereto implement the new member and if youe late comer we can give the chail soaas you can be in our teritory of us without the need of many</p>
+        <figure class="flex items-center gap-6 pt-6">
+            <img src="image/user-2.jpg" alt="" class="rounded-full">
+            <figcaption>
+                <p class="text-primary text-xl font-semibold">Baton Goodnes</p>
+                <p>London,USA</p>
+            </figcaption>
+        </figure>
+        </div>
+      </div>
     </div>
+
+    <!-- Optional navigation buttons -->
+ <div class="swiper-button-next custom-nav"></div>
+<div class="swiper-button-prev custom-nav"></div>
+  </div>
  
 </section>
+
+
 
 
 <footer class="bg-[#37383d] section relative">
@@ -241,25 +248,25 @@
 </footer>
 
 
-<div class="max-w-[73rem] mx-auto px-3 mb-20 fixed top-[30%] left-[30%] bg-blue-200 py-4 modal hidden z-20">
+<div class="max-w-[73rem] mx-auto px-3 mb-20 fixed top-[30%] md:left-[30%] left-[7%] right-[7%] md:right-auto bg-blue-200 py-4 modal hidden z-20">
    <button class="btn-close cursor-pointer text-2xl right-4 absolute"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>
 </button>
 
     <form action="" class="mt-10 flex flex-col gap-6 items-center">
-         <h1 class="text-2xl max-w-md text-center">Open your bank accoutn in just 3 <span class="bg-primary px-2 py-2">minutes</span></h1>
-        <div class="flex gap-5">
+         <h1 class="text-2xl max-w-md text-center">Open your bank accoutn in just 3 minutes</h1>
+        <div class="flex flex-col md:flex-row gap-5">
         <label for="">First Name:</label>
         <input type="text" class="px-4 py-2 bg-amber-100">
         </div>
 
-        <div class="flex gap-5">
+        <div class="flex flex-col md:flex-row gap-5">
         <label for="Last Name">Last Name:</label>
         <input type="text" class="px-4 py-2 bg-amber-100">
         </div>
 
-        <div class="flex gap-5">
+        <div class="flex flex-col md:flex-row gap-5">
         <label for="email">Email Address:</label>
         <input type="email"  class="px-4 py-2 bg-amber-100">
         </div>
@@ -271,6 +278,49 @@
     </form>
 </div>
 <div class="overlay hidden"></div>
+
+
+
+
+
+  <!-- SwiperJS Core -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('#mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    // Pause autoplay on hover
+    const swiperEl = document.getElementById('mySwiper');
+    swiperEl.addEventListener('mouseenter', () => swiper.autoplay.stop());
+    swiperEl.addEventListener('mouseleave', () => swiper.autoplay.start());
+  </script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="index.js"></script>
+
+ 
 </body>
 </html>
