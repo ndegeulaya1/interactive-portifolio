@@ -73,18 +73,7 @@ navs.addEventListener('mouseout',(e)=>{
  mouseHover(e,1);
 })
 
-/*
-const initialCoords = section1.getBoundingClientRect();
 
-window.addEventListener('scroll', function () {
-  if (window.scrollY > initialCoords.top) {
-    nav.classList.add('sticky', 'top-0', 'left-0', 'w-full', 'z-50', 'shadow-md', 'bg-white', 'py-3');
-  } else {
-    nav.classList.remove('sticky', 'top-0', 'left-0', 'w-full', 'z-50', 'shadow-md', 'bg-white');
-  }
-});
-
-*/
 
 
  // Or any top section
@@ -170,13 +159,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
-
-
-
-
 //pop up button
-
 const openPop= document.querySelectorAll('.btn-open');
 const allPop = document.querySelector('.modal');
 const closePop = document.querySelector('.btn-close');
@@ -206,79 +189,7 @@ document.addEventListener('keydown', function(e){
   }
 })
 
-//navigation
-
-
-
-
-
-
-
-
-
-
-/*
-const tab = document.querySelector('.tab');
-const tabContainer = document.querySelector('.operation-container');
-const tabContent = document.querySelectorAll('.operation_content'); // Fixed this line
-const btnTab = document.querySelectorAll('.btn-operation');
-
-tabContainer.addEventListener('click', (e) => {
-  const click = e.target.closest('.btn-operation');
-  if (!click) return;
-
-  btnTab.forEach(t => t.classList.remove('operation-active'));
-  tabContent.forEach(c => c.classList.remove('operation_content-active'));
-
-  click.classList.add('operation-active');
-  document.querySelector(`.operation_content-${click.dataset.tab}`).classList.add('operation_content-active');
-});
-tabContent.forEach(content => content.togg.add('hidden'));
-contentToShow.classList.remove('hidden');
-
-
-*/
-
-
-/*const h1=document.querySelector('h1');
-
-const add = function(){
-   h1.innerHTML='hellow';
-}
-
-h1.addEventListener('mouseenter', add)
-
-
-setTimeout(()=>{
-  h1.removeEventListener('mouseenter',add);
-},5000)
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//handle navigation
 function show(){
     const show=document.querySelector('.sidebar');
     show.style.display='flex';
